@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bsrec4rpm7q83"
+path="res://.godot/imported/avaimen heittohuuto (ehkä).mp3-6ec0822177efcdb7d97e27d5adce530d.mp3str"
+
+[deps]
+
+source_file="res://sounds/avaimen heittohuuto (ehkä).mp3"
+dest_files=["res://.godot/imported/avaimen heittohuuto (ehkä).mp3-6ec0822177efcdb7d97e27d5adce530d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

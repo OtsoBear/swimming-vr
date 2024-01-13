@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bpl1c1q4veoso"
+path="res://.godot/imported/murinaa (matala).mp3-1738503349abd5736d7ae825f2b22210.mp3str"
+
+[deps]
+
+source_file="res://sounds/murinaa (matala).mp3"
+dest_files=["res://.godot/imported/murinaa (matala).mp3-1738503349abd5736d7ae825f2b22210.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

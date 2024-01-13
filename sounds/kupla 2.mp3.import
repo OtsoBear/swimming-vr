@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ciesqdi7jil6i"
+path="res://.godot/imported/kupla 2.mp3-68f94f1b6f3ed420e69e1158c928e5d6.mp3str"
+
+[deps]
+
+source_file="res://sounds/kupla 2.mp3"
+dest_files=["res://.godot/imported/kupla 2.mp3-68f94f1b6f3ed420e69e1158c928e5d6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

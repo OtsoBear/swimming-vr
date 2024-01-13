@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://crbxmsgkqrh5c"
+path="res://.godot/imported/katriina rummuttaa vihaisesti altaan reunalla.mp3-e8f3a0b6b5a4abd2082511a56eaa6ec9.mp3str"
+
+[deps]
+
+source_file="res://sounds/katriina rummuttaa vihaisesti altaan reunalla.mp3"
+dest_files=["res://.godot/imported/katriina rummuttaa vihaisesti altaan reunalla.mp3-e8f3a0b6b5a4abd2082511a56eaa6ec9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

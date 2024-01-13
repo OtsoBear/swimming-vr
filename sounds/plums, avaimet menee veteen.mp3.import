@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ox0u8vrg6hct"
+path="res://.godot/imported/plums, avaimet menee veteen.mp3-a0e9f7eaf4a2f1bf42c36a2542789947.mp3str"
+
+[deps]
+
+source_file="res://sounds/plums, avaimet menee veteen.mp3"
+dest_files=["res://.godot/imported/plums, avaimet menee veteen.mp3-a0e9f7eaf4a2f1bf42c36a2542789947.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
