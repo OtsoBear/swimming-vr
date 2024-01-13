@@ -1,13 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://cf4gsljvutjtm"]
+[gd_scene load_steps=10 format=3 uid="uid://cf4gsljvutjtm"]
 
 [ext_resource type="PackedScene" path="res://addons/godot-xr-tools/misc/vr_common_shader_cache.tscn" id="1_4d3vq"]
 [ext_resource type="Texture2D" uid="uid://duvnagb0vo52d" path="res://textures/flashlight_gobo.jpeg" id="2_2kps3"]
 [ext_resource type="PackedScene" uid="uid://hpr0v012ghsb" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_tac_glove.tscn" id="2_luafi"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="3_473ih"]
 [ext_resource type="PackedScene" uid="uid://j2gntg6ywduc" path="res://characters/player/swim2/MovementSwim2.tscn" id="5_0to8y"]
+[ext_resource type="PackedScene" uid="uid://dup2vp8v5rpi5" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_tac_glove.tscn" id="5_f1mqy"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="6_602lp"]
-[ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="6_t7kxu"]
-[ext_resource type="PackedScene" uid="uid://chumpejwiub7f" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_tac_glove_low.tscn" id="7_yrpxa"]
 
 [sub_resource type="GDScript" id="GDScript_eshqa"]
 script/source = "extends XRCamera3D
@@ -55,25 +54,21 @@ omni_range = 0.580231
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.145134, 0.410535, 0)
 tracker = &"left_hand"
 
+[node name="LeftHand" parent="LeftHand" instance=ExtResource("2_luafi")]
+
 [node name="MovementDirect" parent="LeftHand" instance=ExtResource("3_473ih")]
 strafe = true
 enabled = false
 
-[node name="MovementSwim2" parent="LeftHand" instance=ExtResource("5_0to8y")]
-
-[node name="FunctionPickup" parent="LeftHand" instance=ExtResource("6_t7kxu")]
-
-[node name="LeftHand" parent="LeftHand" instance=ExtResource("2_luafi")]
+[node name="MovementSwim" parent="LeftHand" instance=ExtResource("5_0to8y")]
 
 [node name="RightHand" type="XRController3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.129495, 0.388508, 0)
 tracker = &"right_hand"
 
-[node name="MovementSwim2" parent="RightHand" instance=ExtResource("5_0to8y")]
+[node name="RightHand" parent="RightHand" instance=ExtResource("5_f1mqy")]
 
-[node name="FunctionPickup" parent="RightHand" instance=ExtResource("6_t7kxu")]
-
-[node name="RightHand" parent="RightHand" instance=ExtResource("7_yrpxa")]
+[node name="MovementSwim" parent="RightHand" instance=ExtResource("5_0to8y")]
 
 [node name="PlayerBody" parent="." instance=ExtResource("6_602lp")]
 player_height_min = 0.5

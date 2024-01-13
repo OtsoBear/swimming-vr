@@ -1,18 +1,19 @@
 @tool
-class_name XRMovementSwim
+class_name XRMovementSwim2
 extends XRToolsMovementProvider
 
 ## Movement provider order
 @export var order : int = 10
 
-var speed : int = 10
+var speed : int = 12
 
 var jitter_comp : int = 5
 
-var drag_coefficient: float = 0000.11
+var drag_coefficient: float = 000.012
 
 var speed_treshold: float = 0.014
 
+var input_action : String = "primary_click"
 
 # Controller node
 @onready var _controller := XRHelpers.get_xr_controller(self)
@@ -33,10 +34,11 @@ func physics_movement(_delta: float, player_body: XRToolsPlayerBody, _disabled: 
 	# Skip if the controller isn't active
 	if !_controller.get_is_active():
 		return
-		
 	
-	if (!get_relative_position(_controller.global_position).distance_to(lastposition) < speed_treshold) && isInWater(_controller.global_position):
-		var controller_movement_direction = lastposition.normalized().direction_to(get_relative_position(_controller.global_position).normalized())
+	var input_action = _controller.is_button_pressed(input_action)
+	
+	if (!get_relative_position(_controller.global_position).distance_to(lastposition) < speed_treshold) && isInWater(_controller.global_position) && input_action:
+		var controller_movement_direction = lastposition.direction_to(get_relative_position(_controller.global_position))
 		
 		DebugDraw3D.draw_line(_controller.global_position, _controller.global_position + controller_movement_direction * 0.3, Color(0,1,0))
 		

@@ -1,0 +1,10 @@
+[gd_resource type="Environment" format=3 uid="uid://cqakqojupbjt8"]
+
+[resource]
+glow_bloom = 0.95
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.34
+volumetric_fog_albedo = Color(0.462745, 0.635294, 1, 1)
+volumetric_fog_emission_energy = 0.0
+volumetric_fog_gi_inject = 0.0
+volumetric_fog_length = 7.2

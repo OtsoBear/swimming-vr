@@ -23,6 +23,10 @@ XRToolsUserSettings="*res://addons/godot-xr-tools/user_settings/user_settings.gd
 
 enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg")
 
+[physics]
+
+3d/default_gravity=0.4
+
 [xr]
 
 openxr/enabled=true
