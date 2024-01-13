@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0w1j0qrmvipt"]
+
+[ext_resource type="PackedScene" uid="uid://bfc35uonr103q" path="res://levels/caves+swimming_pool/uima-allaas+luolajippee withtextureswithmodifiers(1).glb" id="1_b2o1w"]
+
+[node name="uima-allaas+luolajippee withtextureswithmodifiers(1)" instance=ExtResource("1_b2o1w")]
