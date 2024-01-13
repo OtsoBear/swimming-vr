@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqpupsy4pjuty"]
+
+[ext_resource type="Script" path="res://characters/player/swim/movement_swim.gd" id="1_p84h5"]
+
+[node name="MovementSwim" type="Node" groups=["movement_providers"]]
+script = ExtResource("1_p84h5")

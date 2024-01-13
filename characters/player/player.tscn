@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=3 uid="uid://cf4gsljvutjtm"]
+
+[ext_resource type="PackedScene" path="res://addons/godot-xr-tools/misc/vr_common_shader_cache.tscn" id="1_4d3vq"]
+[ext_resource type="PackedScene" uid="uid://hpr0v012ghsb" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_tac_glove.tscn" id="2_luafi"]
+[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="3_473ih"]
+[ext_resource type="PackedScene" uid="uid://bqpupsy4pjuty" path="res://characters/player/swim/MovementSwim.tscn" id="4_4relf"]
+[ext_resource type="PackedScene" uid="uid://dup2vp8v5rpi5" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_tac_glove.tscn" id="5_f1mqy"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="6_602lp"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qwt2a"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_46fip"]
+radius = 0.2
+height = 1.4
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_puh3j"]
+radius = 0.2
+
+[node name="XROrigin3D" type="XROrigin3D"]
+
+[node name="head" type="XRCamera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.603953, 0)
+
+[node name="VRCommonShaderCache" parent="head" instance=ExtResource("1_4d3vq")]
+
+[node name="LeftHand" type="XRController3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.145134, 0.410535, 0)
+tracker = &"left_hand"
+
+[node name="LeftHand" parent="LeftHand" instance=ExtResource("2_luafi")]
+
+[node name="MovementDirect" parent="LeftHand" instance=ExtResource("3_473ih")]
+strafe = true
+enabled = false
+
+[node name="MovementSwim" parent="LeftHand" instance=ExtResource("4_4relf")]
+
+[node name="RightHand" type="XRController3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.129495, 0.388508, 0)
+tracker = &"right_hand"
+
+[node name="RightHand" parent="RightHand" instance=ExtResource("5_f1mqy")]
+
+[node name="MovementSwim2" parent="RightHand" instance=ExtResource("4_4relf")]
+
+[node name="PlayerBody" parent="." instance=ExtResource("6_602lp")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.606166, 0)
+shape = SubResource("SphereShape3D_qwt2a")
+
+[node name="_CollisionShape3D_21084" type="CollisionShape3D" parent="PlayerBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("CapsuleShape3D_46fip")
+
+[node name="_ShapeCast3D_21085" type="ShapeCast3D" parent="PlayerBody"]
+enabled = false
+shape = SubResource("SphereShape3D_puh3j")
+margin = 0.01
+max_results = 1
+collision_mask = 1023
