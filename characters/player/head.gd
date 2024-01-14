@@ -22,6 +22,19 @@ func _process(delta):
 	if oxygen_amount < 10 && !$AudioStreamPlayer2D.is_playing():
 		$AudioStreamPlayer2D.stream = "res://sounds/hukkuminen.mp3"
 		$AudioStreamPlayer2D.play() 
+		if !$AudioStreamPlayer2D.is_playing():
+			$AudioStreamPlayer2D.stream = "res://sounds/pool noodle.mp3"
+			$AudioStreamPlayer2D.play()
+	if oxygen_amount == 76 && !$AudioStreamPlayer2D.is_playing():
+		$AudioStreamPlayer2D.stream ="res://sounds/murinaa (matala).mp3" 
+		$AudioStreamPlayer2D.play()
+	if oxygen_amount == 52 && !$AudioStreamPlayer2D.is_playing():
+		$AudioStreamPlayer2D.stream ="res://sounds/katriina rummuttaa vihaisesti altaan reunalla.mp3"
+		$AudioStreamPlayer2D.play()
+	
+	if oxygen_amount == 28 && !$AudioStreamPlayer2D.is_playing():
+		$AudioStreamPlayer2D.stream =  "res://sounds/kupla 2.mp3"
+		$AudioStreamPlayer2D.play()
 
 func isInWater(transform: Vector3) -> bool:
 	if transform.y > 0:

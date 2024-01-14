@@ -9,6 +9,9 @@ func _ready():
 		if !$AudioStreamPlayer2D.is_playing():
 			$AudioStreamPlayer2D.stream = "res://sounds/avaimen heittohuuto (ehkä).mp3"
 			$AudioStreamPlayer2D.play()
+			if !$AudioStreamPlayer2D.is_playing():
+				$AudioStreamPlayer2D.stream = "res://sounds/plums, avaimet menee veteen.mp3"
+				$AudioStreamPlayer2D.play()
 		
 
 
