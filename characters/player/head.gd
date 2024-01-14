@@ -19,6 +19,9 @@ func _process(delta):
 		oxygen_amount = 100
 	
 	progress_bar.value = oxygen_amount
+	if oxygen_amount < 10 && !$AudioStreamPlayer2D.is_playing():
+		$AudioStreamPlayer2D.stream = "res://sounds/hukkuminen.mp3"
+		$AudioStreamPlayer2D.play() 
 
 func isInWater(transform: Vector3) -> bool:
 	if transform.y > 0:
@@ -28,6 +31,12 @@ func isInWater(transform: Vector3) -> bool:
 
 func enter_oxygen_pocket():
 	inside_oxygen_pocket = true
+	if !$AudioStreamPlayer2D.is_playing():
+		$AudioStreamPlayer2D.stream = "res://sounds/kuplii.mp3"
+		$AudioStreamPlayer2D.play()
 	
 func exit_oxygen_pocket():
 	inside_oxygen_pocket = false
+	if !$AudioStreamPlayer2D.is_playing():
+		$AudioStreamPlayer2D.stream = "res://sounds/vesi splash splash.mp3"
+		$AudioStreamPlayer2D.play()
