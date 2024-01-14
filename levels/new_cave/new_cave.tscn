@@ -26,7 +26,7 @@ size = Vector3(1.95697, 1, 1.99097)
 [sub_resource type="BoxShape3D" id="BoxShape3D_i3e86"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8lfcw"]
-size = Vector3(2.41852, 1.24408, 2.06854)
+size = Vector3(2.86061, 1.24408, 2.06854)
 
 [node name="NewCave" type="Node3D"]
 script = ExtResource("1_kkp4r")
@@ -104,19 +104,23 @@ transform = Transform3D(1.62, 0, -6.18249e-08, 0, 1.13, 0, 5.5335e-08, 0, 1.81, 
 transform = Transform3D(1.62, 0, -6.18249e-08, 0, 1.13, 0, 5.5335e-08, 0, 1.81, -0.246778, 0.33812, -0.285756)
 
 [node name="PickableObject" parent="." instance=ExtResource("4_nistt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.33535, 5.39387, 0)
+
+[node name="Key" parent="." instance=ExtResource("4_nistt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07447, 0, -0.129563)
 
 [node name="AboveWaterArea6" parent="." instance=ExtResource("3_p8gdm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9208, -3.63412, 5.91081)
 
 [node name="CollisionShape3D" parent="AboveWaterArea6" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00570679, -0.00204468, 0.000579834)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00197506, -0.00204468, 0.000579834)
 shape = SubResource("BoxShape3D_8lfcw")
 
 [node name="MeshInstance3D" parent="AboveWaterArea6" index="1"]
-transform = Transform3D(2.41496, 0, 0, 0, 1.25222, 0, 0, 0, 2.06885, 0, 0, 0)
+transform = Transform3D(2.88922, 0, 0, 0, 1.25222, 0, 0, 0, 2.06885, 0, 0, 0)
 
 [node name="MeshInstance3D2" parent="AboveWaterArea6" index="2"]
-transform = Transform3D(2.41496, 0, 0, 0, 1.25222, 0, 0, 0, 2.06885, 0, 0, 0)
+transform = Transform3D(2.88922, 0, 0, 0, 1.25222, 0, 0, 0, 2.06885, 0, 0, 0)
 
 [node name="some_cave" parent="." instance=ExtResource("1_m35y2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.608507, 0)
@@ -128,6 +132,27 @@ script = ExtResource("2_mvdxw")
 [node name="Plane" parent="some_cave" index="1"]
 material_override = ExtResource("9_pc215")
 script = ExtResource("2_mvdxw")
+
+[node name="Key2" parent="." instance=ExtResource("4_nistt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.40099, -1.53882, -2.65256)
+
+[node name="Key3" parent="." instance=ExtResource("4_nistt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.83701, -4.69112, 2.2067)
+
+[node name="Key4" parent="." instance=ExtResource("4_nistt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.46625, -4.86666, -3.84762)
+
+[node name="Key5" parent="." instance=ExtResource("4_nistt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.2773, -4.81742, 3.16766)
+
+[node name="Key6" parent="." instance=ExtResource("4_nistt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.1979, -7.97106, 1.0723)
+
+[node name="Key7" parent="." instance=ExtResource("4_nistt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2218, -5.63557, 6.06812)
+
+[node name="Key8" parent="." instance=ExtResource("4_nistt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7711, -3.93384, -1.57461)
 
 [editable path="AboveWaterArea"]
 [editable path="AboveWaterArea2"]
