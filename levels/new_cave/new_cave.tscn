@@ -1,0 +1,130 @@
+[gd_scene load_steps=14 format=3 uid="uid://c5muvnc7hmpc0"]
+
+[ext_resource type="Script" path="res://levels/new_cave/new_cave.gd" id="1_kkp4r"]
+[ext_resource type="PackedScene" uid="uid://b46f68ldqgcrx" path="res://items/water_surface/water_surface.tscn" id="1_kuja2"]
+[ext_resource type="PackedScene" uid="uid://datjcbk0qanqu" path="res://assets/some_cave.blend" id="1_m35y2"]
+[ext_resource type="PackedScene" uid="uid://cf4gsljvutjtm" path="res://characters/player/player.tscn" id="2_853u7"]
+[ext_resource type="Script" path="res://autoloads/gen_colliders.gd" id="2_mvdxw"]
+[ext_resource type="PackedScene" uid="uid://csci2n5ajiv0" path="res://items/above_water_area/above_water_area.tscn" id="3_p8gdm"]
+[ext_resource type="PackedScene" uid="uid://cjestr2rwx21e" path="res://items/key.tscn" id="4_nistt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_54nev"]
+size = Vector3(1.43384, 1.18494, 1.41418)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s2wcu"]
+size = Vector3(4.25415, 1, 2.51099)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_16qjp"]
+size = Vector3(1.94122, 1.55457, 1.41602)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qlknh"]
+size = Vector3(1.95697, 1, 1.99097)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i3e86"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8lfcw"]
+size = Vector3(2.41852, 1.24408, 2.06854)
+
+[node name="NewCave" type="Node3D"]
+script = ExtResource("1_kkp4r")
+
+[node name="water_surface" parent="." instance=ExtResource("1_kuja2")]
+
+[node name="XROrigin3D" parent="." instance=ExtResource("2_853u7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.66995, 0, 0)
+
+[node name="AboveWaterArea" parent="." instance=ExtResource("3_p8gdm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1594, -3.00529, -1.99864)
+
+[node name="CollisionShape3D" parent="AboveWaterArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.238415, 0.0785174, 0.00565422)
+shape = SubResource("BoxShape3D_54nev")
+
+[node name="MeshInstance3D" parent="AboveWaterArea" index="1"]
+transform = Transform3D(1.415, 0, 0, 0, 1.18106, 0, 0, 0, 1.415, 0.232235, 0.0811405, 0)
+
+[node name="MeshInstance3D2" parent="AboveWaterArea" index="2"]
+transform = Transform3D(1.415, 0, 0, 0, 1.18106, 0, 0, 0, 1.415, 0.232235, 0.0811405, 0)
+
+[node name="AboveWaterArea2" parent="." instance=ExtResource("3_p8gdm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.835, -0.780423, 6.26236)
+
+[node name="CollisionShape3D" parent="AboveWaterArea2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.891113, 0, -0.105412)
+shape = SubResource("BoxShape3D_s2wcu")
+
+[node name="MeshInstance3D" parent="AboveWaterArea2" index="1"]
+transform = Transform3D(4.24664, 0, 0, 0, 1, 0, 0, 0, 2.49978, -0.88993, 0, -0.107021)
+
+[node name="MeshInstance3D2" parent="AboveWaterArea2" index="2"]
+transform = Transform3D(4.24664, 0, 0, 0, 1, 0, 0, 0, 2.49978, -0.88993, 0, -0.107021)
+
+[node name="AboveWaterArea3" parent="." instance=ExtResource("3_p8gdm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.18744, -2.90411, -5.15551)
+
+[node name="CollisionShape3D" parent="AboveWaterArea3" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.430389, -0.222229, 0.370322)
+shape = SubResource("BoxShape3D_16qjp")
+
+[node name="MeshInstance3D" parent="AboveWaterArea3" index="1"]
+transform = Transform3D(1.95627, 0, 0, 0, 1.5587, 0, 0, 0, 1.39028, 0.438742, -0.226021, 0.370072)
+
+[node name="MeshInstance3D2" parent="AboveWaterArea3" index="2"]
+transform = Transform3D(1.95627, 0, 0, 0, 1.5587, 0, 0, 0, 1.39028, 0.438742, -0.226021, 0.370072)
+
+[node name="AboveWaterArea4" parent="." instance=ExtResource("3_p8gdm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.70002, -2.55332, 3.53817)
+
+[node name="CollisionShape3D" parent="AboveWaterArea4" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00985718, 0, 0.00109863)
+shape = SubResource("BoxShape3D_qlknh")
+
+[node name="MeshInstance3D" parent="AboveWaterArea4" index="1"]
+transform = Transform3D(1.95686, 0, 0, 0, 1, 0, 0, 0, 2.02399, 0, 0, 0)
+
+[node name="MeshInstance3D2" parent="AboveWaterArea4" index="2"]
+transform = Transform3D(1.95686, 0, 0, 0, 1, 0, 0, 0, 2.02399, 0, 0, 0)
+
+[node name="AboveWaterArea5" parent="." instance=ExtResource("3_p8gdm")]
+transform = Transform3D(0.780561, 0, -0.625079, 0, 1, 0, 0.625079, 0, 0.780561, 15.3303, -5.97872, 1.81946)
+
+[node name="CollisionShape3D" parent="AboveWaterArea5" index="0"]
+shape = SubResource("BoxShape3D_i3e86")
+
+[node name="MeshInstance3D" parent="AboveWaterArea5" index="1"]
+transform = Transform3D(1.62, 0, -6.18249e-08, 0, 1.13, 0, 5.5335e-08, 0, 1.81, -0.246778, 0.33812, -0.285756)
+
+[node name="MeshInstance3D2" parent="AboveWaterArea5" index="2"]
+transform = Transform3D(1.62, 0, -6.18249e-08, 0, 1.13, 0, 5.5335e-08, 0, 1.81, -0.246778, 0.33812, -0.285756)
+
+[node name="PickableObject" parent="." instance=ExtResource("4_nistt")]
+
+[node name="AboveWaterArea6" parent="." instance=ExtResource("3_p8gdm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9208, -3.63412, 5.91081)
+
+[node name="CollisionShape3D" parent="AboveWaterArea6" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00570679, -0.00204468, 0.000579834)
+shape = SubResource("BoxShape3D_8lfcw")
+
+[node name="MeshInstance3D" parent="AboveWaterArea6" index="1"]
+transform = Transform3D(2.41496, 0, 0, 0, 1.25222, 0, 0, 0, 2.06885, 0, 0, 0)
+
+[node name="MeshInstance3D2" parent="AboveWaterArea6" index="2"]
+transform = Transform3D(2.41496, 0, 0, 0, 1.25222, 0, 0, 0, 2.06885, 0, 0, 0)
+
+[node name="some_cave" parent="." instance=ExtResource("1_m35y2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.608507, 0)
+
+[node name="Cave_02" parent="some_cave" index="0"]
+script = ExtResource("2_mvdxw")
+
+[node name="Plane" parent="some_cave" index="1"]
+script = ExtResource("2_mvdxw")
+
+[editable path="AboveWaterArea"]
+[editable path="AboveWaterArea2"]
+[editable path="AboveWaterArea3"]
+[editable path="AboveWaterArea4"]
+[editable path="AboveWaterArea5"]
+[editable path="AboveWaterArea6"]
+[editable path="some_cave"]
