@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://ciurma4giy6bo"]
+
+[ext_resource type="Texture2D" uid="uid://blv33cl7jmn5w" path="res://textures/cliff/TCom_Rock_CliffVolcanic_4K_albedo.webp" id="1_1lyp4"]
+[ext_resource type="Texture2D" uid="uid://dts1owcp3ag1y" path="res://textures/cliff/TCom_Rock_CliffVolcanic_4K_ao.webp" id="2_t6lip"]
+[ext_resource type="Texture2D" uid="uid://cdvq1yy077j5u" path="res://textures/cliff/TCom_Rock_CliffVolcanic_4K_normal.webp" id="3_33mgc"]
+[ext_resource type="Texture2D" uid="uid://cnqctvkpm62g1" path="res://textures/cliff/TCom_Rock_CliffVolcanic_4K_roughness.webp" id="4_h05hi"]
+
+[resource]
+albedo_texture = ExtResource("1_1lyp4")
+roughness_texture = ExtResource("4_h05hi")
+normal_enabled = true
+normal_texture = ExtResource("3_33mgc")
+ao_enabled = true
+ao_texture = ExtResource("2_t6lip")
+uv1_scale = Vector3(0.38, 0.38, 0.38)
+uv1_triplanar = true
+uv1_world_triplanar = true

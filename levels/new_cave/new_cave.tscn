@@ -1,12 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://c5muvnc7hmpc0"]
+[gd_scene load_steps=17 format=3 uid="uid://c5muvnc7hmpc0"]
 
 [ext_resource type="Script" path="res://levels/new_cave/new_cave.gd" id="1_kkp4r"]
 [ext_resource type="PackedScene" uid="uid://b46f68ldqgcrx" path="res://items/water_surface/water_surface.tscn" id="1_kuja2"]
 [ext_resource type="PackedScene" uid="uid://datjcbk0qanqu" path="res://assets/some_cave.blend" id="1_m35y2"]
+[ext_resource type="PackedScene" uid="uid://b1g2wnggu3qce" path="res://characters/katriina/katriina.tscn" id="2_3ue83"]
 [ext_resource type="PackedScene" uid="uid://cf4gsljvutjtm" path="res://characters/player/player.tscn" id="2_853u7"]
 [ext_resource type="Script" path="res://autoloads/gen_colliders.gd" id="2_mvdxw"]
 [ext_resource type="PackedScene" uid="uid://csci2n5ajiv0" path="res://items/above_water_area/above_water_area.tscn" id="3_p8gdm"]
 [ext_resource type="PackedScene" uid="uid://cjestr2rwx21e" path="res://items/key.tscn" id="4_nistt"]
+[ext_resource type="Material" uid="uid://ciurma4giy6bo" path="res://textures/cliff/cliff.tres" id="7_8dhov"]
+[ext_resource type="Material" uid="uid://ca1s431x7vfh0" path="res://textures/tile/tile.tres" id="9_pc215"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_54nev"]
 size = Vector3(1.43384, 1.18494, 1.41418)
@@ -27,6 +30,9 @@ size = Vector3(2.41852, 1.24408, 2.06854)
 
 [node name="NewCave" type="Node3D"]
 script = ExtResource("1_kkp4r")
+
+[node name="Katriina" parent="." instance=ExtResource("2_3ue83")]
+transform = Transform3D(-0.691891, 0, 0.722002, 0, 1, 0, -0.722002, 0, -0.691891, -3.74965, 1.18893, 2.95871)
 
 [node name="water_surface" parent="." instance=ExtResource("1_kuja2")]
 
@@ -116,9 +122,11 @@ transform = Transform3D(2.41496, 0, 0, 0, 1.25222, 0, 0, 0, 2.06885, 0, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.608507, 0)
 
 [node name="Cave_02" parent="some_cave" index="0"]
+material_override = ExtResource("7_8dhov")
 script = ExtResource("2_mvdxw")
 
 [node name="Plane" parent="some_cave" index="1"]
+material_override = ExtResource("9_pc215")
 script = ExtResource("2_mvdxw")
 
 [editable path="AboveWaterArea"]

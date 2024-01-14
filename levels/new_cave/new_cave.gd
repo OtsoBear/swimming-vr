@@ -14,6 +14,3 @@ func _ready():
 		get_viewport().use_xr = true
 	else:
 		print("OpenXR not initialized, please check if your headset is connected")
-
-func lmao():
-	if 1==1 and 2 == 2 && two not != 2:
