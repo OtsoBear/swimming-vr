@@ -49,10 +49,10 @@ roughness = 0.4
 [node name="PickableObject" type="RigidBody3D"]
 collision_layer = 7
 collision_mask = 196615
-freeze_mode = 1
 max_contacts_reported = 15
 contact_monitor = true
 script = ExtResource("1_3w4l4")
+release_mode = 0
 ranged_grab_method = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
