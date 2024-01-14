@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cf4gsljvutjtm"]
+[gd_scene load_steps=24 format=3 uid="uid://cf4gsljvutjtm"]
 
 [ext_resource type="Script" path="res://characters/player/head.gd" id="1_0vxjq"]
 [ext_resource type="PackedScene" path="res://addons/godot-xr-tools/misc/vr_common_shader_cache.tscn" id="1_4d3vq"]
@@ -113,17 +113,6 @@ orientation = 0
 [sub_resource type="SphereShape3D" id="SphereShape3D_puh3j"]
 radius = 0.2
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_6p3g1"]
-size = Vector3(1, 0.222229, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_smudt"]
-transparency = 1
-albedo_color = Color(0, 0, 0, 0.639216)
-
-[sub_resource type="BoxMesh" id="BoxMesh_sqjw6"]
-material = SubResource("StandardMaterial3D_smudt")
-size = Vector3(1, 0.215, 1)
-
 [node name="XROrigin3D" type="XROrigin3D"]
 
 [node name="head" type="XRCamera3D" parent="."]
@@ -231,23 +220,5 @@ shape = SubResource("SphereShape3D_puh3j")
 margin = 0.01
 max_results = 1
 collision_mask = 1023
-
-[node name="inventory" type="Area3D" parent="PlayerBody"]
-collision_layer = 0
-collision_mask = 4
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerBody/inventory"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0895081, 0)
-shape = SubResource("BoxShape3D_6p3g1")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="PlayerBody/inventory"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0904756, 0)
-mesh = SubResource("BoxMesh_sqjw6")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-unique_name_in_owner = true
-
-[connection signal="body_entered" from="PlayerBody/inventory" to="head/RigidBody3D" method="_on_inventory_body_entered"]
-[connection signal="body_exited" from="PlayerBody/inventory" to="head/RigidBody3D" method="_on_inventory_body_exited"]
 
 [editable path="LeftHand/watch/MeshInstance3D/SubViewport/WatchUi"]
