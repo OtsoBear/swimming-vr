@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://autoloads/gen_colliders.gd" id="2_mvdxw"]
 [ext_resource type="PackedScene" uid="uid://csci2n5ajiv0" path="res://items/above_water_area/above_water_area.tscn" id="3_p8gdm"]
 [ext_resource type="PackedScene" uid="uid://cjestr2rwx21e" path="res://items/key.tscn" id="4_nistt"]
-[ext_resource type="Material" uid="uid://ciurma4giy6bo" path="res://textures/cliff/cliff.tres" id="7_8dhov"]
+[ext_resource type="Material" path="res://textures/cliff/cliff.tres" id="7_8dhov"]
 [ext_resource type="Material" uid="uid://ca1s431x7vfh0" path="res://textures/tile/tile.tres" id="9_pc215"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_54nev"]
