@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://autoloads/gen_colliders.gd" id="2_mvdxw"]
 [ext_resource type="PackedScene" uid="uid://csci2n5ajiv0" path="res://items/above_water_area/above_water_area.tscn" id="3_p8gdm"]
 [ext_resource type="PackedScene" uid="uid://cjestr2rwx21e" path="res://items/key.tscn" id="4_nistt"]
-[ext_resource type="Material" path="res://textures/cliff/cliff.tres" id="7_8dhov"]
+[ext_resource type="Material" uid="uid://ciurma4giy6bo" path="res://textures/cliff/cliff.tres" id="7_8dhov"]
 [ext_resource type="Material" uid="uid://ca1s431x7vfh0" path="res://textures/tile/tile.tres" id="9_pc215"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_54nev"]
@@ -123,7 +123,7 @@ transform = Transform3D(2.88922, 0, 0, 0, 1.25222, 0, 0, 0, 2.06885, 0, 0, 0)
 transform = Transform3D(2.88922, 0, 0, 0, 1.25222, 0, 0, 0, 2.06885, 0, 0, 0)
 
 [node name="some_cave" parent="." instance=ExtResource("1_m35y2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.608507, 0)
+transform = Transform3D(1.9, 0, 0, 0, 1.9, 0, 0, 0, 1.9, 0, 0.608507, 0)
 
 [node name="Cave_02" parent="some_cave" index="0"]
 material_override = ExtResource("7_8dhov")
@@ -133,26 +133,26 @@ script = ExtResource("2_mvdxw")
 material_override = ExtResource("9_pc215")
 script = ExtResource("2_mvdxw")
 
-[node name="Key2" parent="." instance=ExtResource("4_nistt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.40099, -1.53882, -2.65256)
+[node name="Key2" parent="some_cave" instance=ExtResource("4_nistt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.40099, -2.14733, -2.65256)
 
-[node name="Key3" parent="." instance=ExtResource("4_nistt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.83701, -4.69112, 2.2067)
+[node name="Key3" parent="some_cave" instance=ExtResource("4_nistt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.83701, -5.29963, 2.2067)
 
-[node name="Key4" parent="." instance=ExtResource("4_nistt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.46625, -4.86666, -3.84762)
+[node name="Key4" parent="some_cave" instance=ExtResource("4_nistt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.46625, -5.47517, -3.84762)
 
-[node name="Key5" parent="." instance=ExtResource("4_nistt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.2773, -4.81742, 3.16766)
+[node name="Key5" parent="some_cave" instance=ExtResource("4_nistt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.2773, -5.42593, 3.16766)
 
-[node name="Key6" parent="." instance=ExtResource("4_nistt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.1979, -7.97106, 1.0723)
+[node name="Key6" parent="some_cave" instance=ExtResource("4_nistt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.1979, -8.57957, 1.0723)
 
-[node name="Key7" parent="." instance=ExtResource("4_nistt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2218, -5.63557, 6.06812)
+[node name="Key7" parent="some_cave" instance=ExtResource("4_nistt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2218, -6.24408, 6.06812)
 
-[node name="Key8" parent="." instance=ExtResource("4_nistt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7711, -3.93384, -1.57461)
+[node name="Key8" parent="some_cave" instance=ExtResource("4_nistt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7711, -4.54235, -1.57461)
 
 [editable path="AboveWaterArea"]
 [editable path="AboveWaterArea2"]
