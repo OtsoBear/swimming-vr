@@ -244,6 +244,9 @@ shape = SubResource("BoxShape3D_6p3g1")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0904756, 0)
 mesh = SubResource("BoxMesh_sqjw6")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+
 [connection signal="body_entered" from="PlayerBody/inventory" to="head/RigidBody3D" method="_on_inventory_body_entered"]
 [connection signal="body_exited" from="PlayerBody/inventory" to="head/RigidBody3D" method="_on_inventory_body_exited"]
 

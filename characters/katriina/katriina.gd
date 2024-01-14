@@ -3,15 +3,16 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if !$AudioStreamPlayer2D.is_playing():
-		$AudioStreamPlayer2D.stream = "res://sounds/kultakatriina.mp3"
-		$AudioStreamPlayer2D.play()
-		if !$AudioStreamPlayer2D.is_playing():
-			$AudioStreamPlayer2D.stream = "res://sounds/avaimen heittohuuto (ehkä).mp3"
-			$AudioStreamPlayer2D.play()
-			if !$AudioStreamPlayer2D.is_playing():
-				$AudioStreamPlayer2D.stream = "res://sounds/plums, avaimet menee veteen.mp3"
-				$AudioStreamPlayer2D.play()
+	print("Playing Sound")
+	if !$AudioStreamPlayer3D.is_playing():
+		$AudioStreamPlayer3D.stream = load("res://sounds/kultakatriina.mp3")
+		$AudioStreamPlayer3D.play()
+		if !$AudioStreamPlayer3D.is_playing():
+			$AudioStreamPlayer3D.stream = load("res://sounds/avaimen heittohuuto (ehkä).mp3")
+			$AudioStreamPlayer3D.play()
+			if !$AudioStreamPlayer3D.is_playing():
+				$AudioStreamPlayer3D.stream = load("res://sounds/plums, avaimet menee veteen.mp3")
+				$AudioStreamPlayer3D.play()
 		
 
 

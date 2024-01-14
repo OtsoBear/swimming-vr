@@ -23,22 +23,22 @@ func _process(delta):
 		oxygen_amount = 100
 	
 	progress_bar.value = oxygen_amount
-	if oxygen_amount < 10 && !$AudioStreamPlayer2D.is_playing():
-		$AudioStreamPlayer2D.stream = "res://sounds/hukkuminen.mp3"
-		$AudioStreamPlayer2D.play() 
-		if !$AudioStreamPlayer2D.is_playing():
-			$AudioStreamPlayer2D.stream = "res://sounds/pool noodle.mp3"
-			$AudioStreamPlayer2D.play()
-	if oxygen_amount == 76 && !$AudioStreamPlayer2D.is_playing():
-		$AudioStreamPlayer2D.stream ="res://sounds/murinaa (matala).mp3" 
-		$AudioStreamPlayer2D.play()
-	if oxygen_amount == 52 && !$AudioStreamPlayer2D.is_playing():
-		$AudioStreamPlayer2D.stream ="res://sounds/katriina rummuttaa vihaisesti altaan reunalla.mp3"
-		$AudioStreamPlayer2D.play()
+	if oxygen_amount < 10 && !%AudioStreamPlayer.is_playing():
+		%AudioStreamPlayer.stream = "res://sounds/hukkuminen.mp3"
+		%AudioStreamPlayer.play() 
+		if !%AudioStreamPlayer.is_playing():
+			%AudioStreamPlayer.stream = "res://sounds/pool noodle.mp3"
+			%AudioStreamPlayer.play()
+	if oxygen_amount == 76 && !%AudioStreamPlayer.is_playing():
+		%AudioStreamPlayer.stream ="res://sounds/murinaa (matala).mp3" 
+		%AudioStreamPlayer.play()
+	if oxygen_amount == 52 && !%AudioStreamPlayer.is_playing():
+		%AudioStreamPlayer.stream ="res://sounds/katriina rummuttaa vihaisesti altaan reunalla.mp3"
+		%AudioStreamPlayer.play()
 	
-	if oxygen_amount == 28 && !$AudioStreamPlayer2D.is_playing():
-		$AudioStreamPlayer2D.stream =  "res://sounds/kupla 2.mp3"
-		$AudioStreamPlayer2D.play()
+	if oxygen_amount == 28 && !%AudioStreamPlayer.is_playing():
+		%AudioStreamPlayer.stream =  "res://sounds/kupla 2.mp3"
+		%AudioStreamPlayer.play()
 
 func _physics_process(delta):
 	
@@ -57,16 +57,16 @@ func isInWater(transform: Vector3) -> bool:
 
 func enter_oxygen_pocket():
 	inside_oxygen_pocket = true
-	if !$AudioStreamPlayer2D.is_playing():
-		$AudioStreamPlayer2D.stream = "res://sounds/kuplii.mp3"
-		$AudioStreamPlayer2D.play()
+	if !%AudioStreamPlayer.is_playing():
+		%AudioStreamPlayer.stream = "res://sounds/kuplii.mp3"
+		%AudioStreamPlayer.play()
 	
 func exit_oxygen_pocket():
 	inside_oxygen_pocket = false
 
-	if !$AudioStreamPlayer2D.is_playing():
-		$AudioStreamPlayer2D.stream = "res://sounds/vesi splash splash.mp3"
-		$AudioStreamPlayer2D.play()
+	if !%AudioStreamPlayer.is_playing():
+		%AudioStreamPlayer.stream = "res://sounds/vesi splash splash.mp3"
+		%AudioStreamPlayer.play()
 
 
 func _on_inventory_body_entered(body: Node3D):
