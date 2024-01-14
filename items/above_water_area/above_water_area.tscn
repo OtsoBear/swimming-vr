@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://csci2n5ajiv0"]
+
+[ext_resource type="Script" path="res://items/above_water_area/above_water_area.gd" id="1_3srb7"]
+[ext_resource type="Material" uid="uid://dqwhiw3fa2fuy" path="res://items/above_water_area/water.tres" id="2_22lqd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3dwx2"]
+size = Vector3(1, 0.281738, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_j2ejf"]
+material = ExtResource("2_22lqd")
+
+[sub_resource type="BoxMesh" id="BoxMesh_lfaok"]
+material = ExtResource("2_22lqd")
+flip_faces = true
+size = Vector3(0.99, 0.99, 0.99)
+
+[node name="AboveWaterArea" type="Area3D"]
+collision_layer = 8388608
+collision_mask = 8388608
+script = ExtResource("1_3srb7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_3dwx2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_j2ejf")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_lfaok")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

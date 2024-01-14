@@ -1,37 +1,47 @@
-[gd_scene load_steps=14 format=3 uid="uid://c1a275a61oroc"]
+[gd_scene load_steps=19 format=3 uid="uid://c1a275a61oroc"]
 
 [ext_resource type="Script" path="res://levels/test_level/test_level.gd" id="1_gw1eb"]
 [ext_resource type="PackedScene" uid="uid://cf4gsljvutjtm" path="res://characters/player/player.tscn" id="2_02t3l"]
 [ext_resource type="PackedScene" uid="uid://dfbuscpf06jf2" path="res://levels/test_level/uimaAlLuol.tscn" id="3_2rhov"]
 [ext_resource type="PackedScene" uid="uid://cjestr2rwx21e" path="res://items/key.tscn" id="4_lv3gw"]
+[ext_resource type="PackedScene" uid="uid://b46f68ldqgcrx" path="res://items/water_surface/water_surface.tscn" id="5_8utbq"]
+[ext_resource type="PackedScene" uid="uid://c2fqwacg7qb2l" path="res://assets/newcaves.glb" id="5_73b37"]
+[ext_resource type="Texture2D" uid="uid://blv33cl7jmn5w" path="res://textures/cliff/TCom_Rock_CliffVolcanic_4K_albedo.webp" id="6_2rl3h"]
+[ext_resource type="Texture2D" uid="uid://dts1owcp3ag1y" path="res://textures/cliff/TCom_Rock_CliffVolcanic_4K_ao.webp" id="7_8xn6e"]
+[ext_resource type="Texture2D" uid="uid://dvlgoo2kbhk4w" path="res://textures/cliff/TCom_Rock_CliffVolcanic_4K_height.webp" id="8_282us"]
+[ext_resource type="Texture2D" uid="uid://cdvq1yy077j5u" path="res://textures/cliff/TCom_Rock_CliffVolcanic_4K_normal.webp" id="9_8laec"]
+[ext_resource type="Texture2D" uid="uid://cnqctvkpm62g1" path="res://textures/cliff/TCom_Rock_CliffVolcanic_4K_roughness.webp" id="10_dtt8y"]
+[ext_resource type="PackedScene" uid="uid://csci2n5ajiv0" path="res://items/above_water_area/above_water_area.tscn" id="12_vostk"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_06w2t"]
 
-[sub_resource type="Environment" id="Environment_vmvb6"]
-background_mode = 1
-background_color = Color(0.780392, 0.854902, 1, 1)
+[sub_resource type="Environment" id="Environment_4che7"]
 
-[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_h4mr6"]
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_qe2n4"]
 
-[sub_resource type="Gradient" id="Gradient_hojuu"]
-offsets = PackedFloat32Array(0, 0.22293, 0.251592, 1)
-colors = PackedColorArray(1, 1, 1, 0.603922, 0.845054, 0.893856, 1, 0.684444, 0.501961, 0.658824, 1, 0.862745, 0, 0.317647, 1, 0.603922)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nx4fw"]
+albedo_texture = ExtResource("6_2rl3h")
+roughness_texture = ExtResource("10_dtt8y")
+roughness_texture_channel = 4
+normal_enabled = true
+normal_texture = ExtResource("9_8laec")
+rim = 0.0
+ao_enabled = true
+ao_texture = ExtResource("7_8xn6e")
+ao_on_uv2 = true
+heightmap_enabled = true
+heightmap_texture = ExtResource("8_282us")
+uv1_triplanar = true
+proximity_fade_distance = 0.0
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_33n61"]
-frequency = 0.0095
+[sub_resource type="GDScript" id="GDScript_7j8pj"]
+script/source = "extends MeshInstance3D
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_7equ2"]
-seamless = true
-color_ramp = SubResource("Gradient_hojuu")
-noise = SubResource("FastNoiseLite_33n61")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mv0rx"]
-transparency = 1
-albedo_texture = SubResource("NoiseTexture2D_7equ2")
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_7byra"]
-material = SubResource("StandardMaterial3D_mv0rx")
-size = Vector2(32, 32)
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	create_trimesh_collision()
+"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_60cbh"]
 size = Vector3(1, 0.26123, 1)
@@ -57,8 +67,8 @@ mesh = SubResource("BoxMesh_06w2t")
 skeleton = NodePath("")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_vmvb6")
-camera_attributes = SubResource("CameraAttributesPractical_h4mr6")
+environment = SubResource("Environment_4che7")
+camera_attributes = SubResource("CameraAttributesPractical_qe2n4")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.9719, 0)
@@ -72,16 +82,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.36314, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.39898, 0)
 press_to_hold = false
 
-[node name="water_surface" type="Node3D" parent="."]
+[node name="water_surface" parent="." instance=ExtResource("5_8utbq")]
+transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="water_surface"]
-mesh = SubResource("PlaneMesh_7byra")
-skeleton = NodePath("../..")
+[node name="water_surface2" parent="." instance=ExtResource("5_8utbq")]
+transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, 0, 0, -31.9121)
 
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="water_surface"]
-transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0)
-mesh = SubResource("PlaneMesh_7byra")
-skeleton = NodePath("../..")
+[node name="newcaves" parent="." instance=ExtResource("5_73b37")]
+transform = Transform3D(-2, 0, 3.01992e-07, 0, 2, 0, -3.01992e-07, 0, -2, -10.0778, -11.355, -18.6387)
+
+[node name="Cube_001" parent="newcaves" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_nx4fw")
+script = SubResource("GDScript_7j8pj")
+
+[node name="AboveWaterArea" parent="newcaves" instance=ExtResource("12_vostk")]
+transform = Transform3D(1.96, 0, 0, 0, 1.96, 0, 0, 0, 1.96, -0.253248, 4.43699, 0.333172)
+
+[node name="CollisionShape3D" parent="newcaves/AboveWaterArea" index="0"]
+transform = Transform3D(1, 0, -3.69482e-13, 0, 1, 0, 3.69482e-13, 0, 1, 0, -0.359131, 0)
+
+[node name="MeshInstance3D2" parent="newcaves/AboveWaterArea" index="2"]
+transform = Transform3D(1, 0, -2.84217e-14, 0, 1, 0, 2.84217e-14, 0, 1, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 collision_layer = 5
@@ -89,3 +110,9 @@ collision_layer = 5
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.21309, 0)
 shape = SubResource("BoxShape3D_60cbh")
+
+[node name="AboveWaterArea" parent="." instance=ExtResource("12_vostk")]
+transform = Transform3D(2.06, 0, 0, 0, 2.06, 0, 0, 0, 2.06, 6.27977, 0, 0.0302506)
+
+[editable path="newcaves"]
+[editable path="newcaves/AboveWaterArea"]

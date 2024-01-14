@@ -9,9 +9,9 @@ var speed : int = 12
 
 var jitter_comp : int = 5
 
-var drag_coefficient: float = 000.012
+var drag_coefficient: float = 000.082
 
-var speed_treshold: float = 0.014
+var speed_treshold: float = 0.001
 
 var input_action : String = "primary_click"
 
@@ -23,6 +23,8 @@ var input_action : String = "primary_click"
 @onready var lastposition := _controller.position.normalized()
 
 @onready var velocity := Vector3(0,0,0)
+
+var inside_oxygen_pocket := false
 
 
 # Add support for is_xr_class on XRTools classes
@@ -52,7 +54,7 @@ func physics_movement(_delta: float, player_body: XRToolsPlayerBody, _disabled: 
 		# applies drag
 		velocity +=  -velocity.normalized() * (drag_coefficient * (((velocity.length()) ** 2)/2))
 		# Applies buyoncy
-		velocity += (Vector3.UP * 0.0006)
+		velocity += (Vector3.UP * 0.0008)
 		
 	else:
 		velocity += Vector3.DOWN * 0.981 * _delta
@@ -65,7 +67,13 @@ func physics_movement(_delta: float, player_body: XRToolsPlayerBody, _disabled: 
 func isInWater(transform: Vector3) -> bool:
 	if transform.y > 0:
 		return false;
-	return true
+	return !inside_oxygen_pocket
+
+func enter_oxygen_pocket():
+	inside_oxygen_pocket = true
+	
+func exit_oxygen_pocket():
+	inside_oxygen_pocket = false
 
 func get_relative_position(transform: Vector3) -> Vector3:
 	return( transform - (_bodyCamera.global_position - (Vector3.UP * 0.25)))

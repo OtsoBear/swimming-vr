@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://b46f68ldqgcrx"]
+
+[sub_resource type="Gradient" id="Gradient_m3hip"]
+offsets = PackedFloat32Array(0, 0.133971, 0.22488, 0.294258, 0.406699, 0.569378, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.0947814, 0.0947814, 0.0947814, 1, 0.824831, 0.824831, 0.824831, 1, 0.938115, 0.938115, 0.938115, 1, 0.0304655, 0.0304655, 0.0304655, 1, 0.894737, 0.894737, 0.894737, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_diov0"]
+noise_type = 2
+frequency = 0.0165
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_kuahf"]
+color_ramp = SubResource("Gradient_m3hip")
+noise = SubResource("FastNoiseLite_diov0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ql178"]
+transparency = 1
+albedo_color = Color(0.101961, 0.337255, 1, 0.67451)
+albedo_texture = SubResource("NoiseTexture2D_kuahf")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7byra"]
+material = SubResource("StandardMaterial3D_ql178")
+size = Vector2(32, 32)
+subdivide_width = 32
+subdivide_depth = 32
+
+[node name="water_surface" type="Node3D"]
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_7byra")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0)
+mesh = SubResource("PlaneMesh_7byra")
+skeleton = NodePath("../..")

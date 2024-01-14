@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://flq0w7s2v2p0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_liq53"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ig1an"]
+bg_color = Color(0, 0.654902, 0.870588, 1)
+
+[sub_resource type="Theme" id="Theme_gu2d0"]
+ProgressBar/styles/background = SubResource("StyleBoxEmpty_liq53")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_ig1an")
+
+[sub_resource type="LabelSettings" id="LabelSettings_bkfvy"]
+line_spacing = 48.0
+font_size = 48
+
+[node name="WatchUi" type="Control"]
+layout_mode = 3
+anchor_right = 0.222
+anchor_bottom = 0.395
+offset_right = 0.255981
+offset_bottom = 0.0399933
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -67.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_gu2d0")
+value = 5.77
+show_percentage = false
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -67.0
+offset_right = 56.0
+grow_vertical = 0
+text = "O₂"
+label_settings = SubResource("LabelSettings_bkfvy")
+vertical_alignment = 1
